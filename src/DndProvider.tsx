@@ -373,7 +373,11 @@ export const DndProvider = forwardRef<DndProviderHandle, PropsWithChildren<DndPr
               ) {
                 return;
               }
-              states[activeId].value = "resting";
+              // todo: check this changes
+              if (states[activeId]?.value) {
+                  states[activeId].value = "resting";
+              }
+              // states[activeId].value = "resting";
               if (!finishedX || !finishedY) {
                 // console.log(`${activeId} did not finish to reach ${targetX.toFixed(2)} ${currentX}`);
               }
